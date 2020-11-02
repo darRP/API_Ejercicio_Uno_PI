@@ -1,0 +1,70 @@
+openapi: 3.0.0
+info:
+  title: APIEjercicioUno
+  description: "Primer Ejercicio De Prueba.\r\nContiene un método GET el cual calculara un numero random dependiendo de un parámetro de entrada, luego busca el numero PI y lo retorna según el numero random."
+  contact: 
+        name: "Daniel Retamales"
+        email: "danretamalesp@gmail.com"
+        url: ""
+  
+  version: '1.0'
+servers:
+  - url: 'http://127.0.0.1:3333'
+    variables: {}
+paths:
+  /getPI:
+    get:
+      tags:
+        - API_Ejercicio_PI
+      summary: CalcularPI_SegunParametro
+      description: "GET: recibe un parametro de entrada que calcula un número random entre (parametro/2 y el parametro). Luego deberás calcular los decimales del pi considerando el número random\r\nEj:\r\n1. Request: /pi/?random_limit=10 (el número random fue calculado en 5)\r\nSalida: PiCalc\": “3.14159\""
+      operationId: CalcularPI_SegunParametro
+      parameters:
+        - name: numero
+          in: query
+          description: >-
+            Parámetro que debe indicar el numero por el cual se otorga el valor
+            mínimo (parámetro/2) y el máximo (parámetro) que indicaría el rango
+            para obtener el numero random que servira como indice de decimales
+            en la respuesta de PI.
+          required: true
+          style: form
+          explode: true
+          schema:
+            type: integer
+            format: int32
+            example: 10
+      responses:
+        '200':
+          description: 'CalcularPI_SegunParametro - status 200 respuesta correcta en base a numero (parametro) = 10'
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: >-
+                  #/components/schemas/CalcularPI_SegunParametro-status200-respuesta-correcta-en-base-a-numero-parametro-10
+              example:
+                PI: '3.141592654'
+                numeroRandom: 9
+        
+      deprecated: false
+components:
+  schemas:
+    CalcularPI_SegunParametro-status200-respuesta-correcta-en-base-a-numero-parametro-10:
+      title: >-
+        CalcularPI_SegunParametro-status200-respuesta-correcta-en-base-a-numero-parametro-10
+      required:
+        - PI
+        - numeroRandom
+      type: object
+      properties:
+        PI:
+          type: string
+        numeroRandom:
+          type: integer
+          format: int32
+      example:
+        PI: '3.141592654'
+        numeroRandom: 9
+tags:
+  - name: API_Ejercicio_PI
+    description: ''

@@ -1,0 +1,251 @@
+{
+    "info": {
+        "_postman_id": "6e546afe-c195-492a-8f9e-e4915436a63f",
+        "name": "APIEjercicioUno",
+        "description": "Primer Ejercicio De Prueba.\r\nContiene un metodo GET el cual calculara un numero random dependiendo de un parametro de entrada.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [{
+        "name": "CalcularPI_SegunParametro",
+        "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+                "raw": "http://127.0.0.1:3333/getPI?numero=0",
+                "protocol": "http",
+                "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                ],
+                "port": "3333",
+                "path": [
+                    "getPI"
+                ],
+                "query": [{
+                    "key": "numero",
+                    "value": "0",
+                    "description": "Parámetro que debe indicar el numero por el cual se otorga el valor mínimo (parámetro/2) y el máximo (parámetro) que indicaría el rango para obtener el numero random que servira como indice de decimales en la respuesta de PI."
+                }]
+            },
+            "description": "GET: recibe un parametro de entrada que calcula un número random entre (parametro/2 y el parametro). Luego deberás calcular los decimales del pi considerando el número random\r\nEj:\r\n1. Request: /pi/?random_limit=10 (el número random fue calculado en 5)\r\nSalida: PiCalc\": “3.14159\""
+        },
+        "response": [{
+                "name": "CalcularPI_SegunParametro - status 200 respuesta correcta en base a numero (parametro) = 10",
+                "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                        "raw": "http://127.0.0.1:3333/getPI?numero=10",
+                        "protocol": "http",
+                        "host": [
+                            "127",
+                            "0",
+                            "0",
+                            "1"
+                        ],
+                        "port": "3333",
+                        "path": [
+                            "getPI"
+                        ],
+                        "query": [{
+                            "key": "numero",
+                            "value": "10",
+                            "description": "Parámetro que debe indicar el numero por el cual se otorga el valor mínimo (parámetro/2) y el máximo (parámetro) que indicaría el rango para obtener el numero random que servira como indice de decimales en la respuesta de PI. "
+                        }]
+                    }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [{
+                        "key": "Content-Type",
+                        "value": "application/json; charset=utf-8"
+                    },
+                    {
+                        "key": "Content-Length",
+                        "value": "37"
+                    },
+                    {
+                        "key": "Date",
+                        "value": "Sat, 31 Oct 2020 01:16:27 GMT"
+                    },
+                    {
+                        "key": "Connection",
+                        "value": "keep-alive"
+                    }
+                ],
+                "cookie": [],
+                "body": "{\n    \"PI\": \"3.141592654\",\n    \"numeroRandom\": 9\n}"
+            },
+            {
+                "name": "CalcularPI_SegunParametro  - Message si el parámetro viene negativo",
+                "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                        "raw": "http://127.0.0.1:3333/getPI?numero=-2",
+                        "protocol": "http",
+                        "host": [
+                            "127",
+                            "0",
+                            "0",
+                            "1"
+                        ],
+                        "port": "3333",
+                        "path": [
+                            "getPI"
+                        ],
+                        "query": [{
+                            "key": "numero",
+                            "value": "-2",
+                            "description": "Parámetro que debe indicar el numero por el cual se otorga el valor mínimo (parámetro/2) y el máximo (parámetro) que indicaría el rango para obtener el numero random que servira como indice de decimales en la respuesta de PI."
+                        }]
+                    }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [{
+                        "key": "Content-Type",
+                        "value": "application/json; charset=utf-8"
+                    },
+                    {
+                        "key": "Content-Length",
+                        "value": "62"
+                    },
+                    {
+                        "key": "Date",
+                        "value": "Sun, 01 Nov 2020 02:29:15 GMT"
+                    },
+                    {
+                        "key": "Connection",
+                        "value": "keep-alive"
+                    }
+                ],
+                "cookie": [],
+                "body": "{\n    \"message\": \"Por favor ingrese solo números positivos o cero\"\n}"
+            },
+
+            {
+                "name": "CalcularPI_SegunParametro - Message si el parámetro viene vació",
+                "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                        "raw": "http://127.0.0.1:3333/getPI?numero=",
+                        "protocol": "http",
+                        "host": [
+                            "127",
+                            "0",
+                            "0",
+                            "1"
+                        ],
+                        "port": "3333",
+                        "path": [
+                            "getPI"
+                        ],
+                        "query": [{
+                            "key": "numero",
+                            "value": "",
+                            "description": "Parámetro que debe indicar el numero por el cual se otorga el valor mínimo (parámetro/2) y el máximo (parámetro) que indicaría el rango para obtener el numero random que servira como indice de decimales en la respuesta de PI."
+                        }]
+                    }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [{
+                        "key": "Content-Type",
+                        "value": "application/json; charset=utf-8"
+                    },
+                    {
+                        "key": "Content-Length",
+                        "value": "59"
+                    },
+                    {
+                        "key": "Date",
+                        "value": "Sat, 31 Oct 2020 01:08:42 GMT"
+                    },
+                    {
+                        "key": "Connection",
+                        "value": "keep-alive"
+                    }
+                ],
+                "cookie": [],
+                "body": "{\n    \"message\": \"Por favor ingrese algún parámetro numérico\"\n}"
+            },
+            {
+                "name": "CalcularPI_SegunParametro - Message si es un String",
+                "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                        "raw": "http://127.0.0.1:3333/getPI?numero=STRING",
+                        "protocol": "http",
+                        "host": [
+                            "127",
+                            "0",
+                            "0",
+                            "1"
+                        ],
+                        "port": "3333",
+                        "path": [
+                            "getPI"
+                        ],
+                        "query": [{
+                            "key": "numero",
+                            "value": "STRING",
+                            "description": "Parámetro que debe indicar el numero por el cual se otorga el valor mínimo (parámetro/2) y el máximo (parámetro) que indicaría el rango para obtener el numero random que servira como indice de decimales en la respuesta de PI."
+                        }]
+                    }
+                },
+                "status": "OK",
+                "code": 200,
+                "_postman_previewlanguage": "json",
+                "header": [{
+                        "key": "Content-Type",
+                        "value": "application/json; charset=utf-8"
+                    },
+                    {
+                        "key": "Content-Length",
+                        "value": "55"
+                    },
+                    {
+                        "key": "Date",
+                        "value": "Sat, 31 Oct 2020 01:05:24 GMT"
+                    },
+                    {
+                        "key": "Connection",
+                        "value": "keep-alive"
+                    }
+                ],
+                "cookie": [],
+                "body": "{\n    \"message\": \"Por favor no ingrese string solo números\"\n}"
+            }
+        ]
+    }],
+    "event": [{
+            "listen": "prerequest",
+            "script": {
+                "id": "5037a7e4-872e-442b-9f85-fac253f2b147",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "id": "84980e53-2b32-4b5d-b4d1-ce7a3852170c",
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "protocolProfileBehavior": {}
+}
